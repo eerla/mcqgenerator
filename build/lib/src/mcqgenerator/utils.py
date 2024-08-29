@@ -6,7 +6,7 @@ import traceback
 def read_file(file):
     if file.name.endswith('.pdf'):
         try:
-            pdf_reader = PyPDF2.PdfFileReader(file)
+            pdf_reader = PyPDF2.PdfReader(file)
             text = ''
             for page in pdf_reader.pages:
                 text+=page.extract_text()
@@ -23,19 +23,22 @@ def read_file(file):
     
 def get_table_data(quiz_str):
     try:
-        quiz_dict=json.loads(quiz_str)
+        # print("inside utils")
+        # print(type(quiz_str))
+        # print(quiz_str.replace("### RESPONSE_JSON", ""))
+        quiz_dict=json.loads(quiz_str.replace("### RESPONSE_JSON", ""))
         quiz_table_data = []
 
-        for key, val in quiz_dict.items():
-            mcq=val["mcq"]
+        for key, value in quiz_dict.items():
+            mcq=value["mcq"]
             options = " | ".join(
                 [
                 f"{option}: {option_value}"
-                for option, option_value in val["options"].items()
+                for option, option_value in value["options"].items()
                 ]
             )
-        correct = value["correct"]
-        quiz_table_data.append({"MCQ": mcq, "Choices": options, "Correct": correct})
+            correct = value["correct"]
+            quiz_table_data.append({"MCQ": mcq, "Choices": options, "Correct": correct})
         return quiz_table_data
     
     except Exception as e:

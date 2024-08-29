@@ -73,18 +73,6 @@ generate_evaluate_chain=SequentialChain(
 
 
 
-
-
-print(f"Total Tokens:{cb.total_tokens}")
-print(f"Prompt Tokens:{cb.prompt_tokens}")
-print(f"Completion Tokens:{cb.completion_tokens}")
-print(f"Total Cost:{cb.total_cost}")
-
-
-
 # quiz_table_data = get_table_data(response.get("quiz"))
-
-   
-
 # quiz_df=pd.DataFrame(quiz_table_data)
 # quiz_df.to_csv("machinelearning.csv",index=False)

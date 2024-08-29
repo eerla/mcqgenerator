@@ -17,7 +17,7 @@ from src.mcqgenerator.logger import logging
 with open("response.json", "r") as jsonfile:
     RESPONSE_JSON=json.load(jsonfile)
 
-st.title("MCQs Generator with LangChain ")
+st.title("MCQs Generator with LangChain 🦜⛓️")
 
 with st.form("user_inputs"):
     # file uploader
@@ -75,7 +75,7 @@ with st.form("user_inputs"):
                             df.index=df.index+1
                             st.table(df)
                             #Display the review in atext box as well
-                            st.text_area(label="Review", value=response["review"])
+                            # st.text_area(label="Review", value=response["review"])
                         else:
                             st.error("Error in the table data")
 

@@ -53,7 +53,7 @@ update the quiz questions which needs to be changed and change the tone such tha
 Quiz_MCQs:
 {quiz}
 
-Check from an expert English Writer of the above quiz and return only the quiz, make sure quiz is correct expected format without additional tags:
+Check from an expert English Writer of the above quiz:
 """
 
 quiz_evaluation_prompt=PromptTemplate(
