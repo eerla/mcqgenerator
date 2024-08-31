@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 from langchain.callbacks import get_openai_callback
 
 from src.mcqgenerator.mcqgenerator import generate_evaluate_chain
-from src.mcqgenerator.utils import read_file, get_table_data
+from src.mcqgenerator.utils import read_file, get_table_data, create_file
 from src.mcqgenerator.logger import logging
 
 # load json resonse format
@@ -27,7 +27,7 @@ with st.form("user_inputs"):
     mcq_count=st.number_input("No.of MCQs", min_value=3, max_value=50)
 
     # Set the subject of the input data
-    subject = st.text_input("Insert subject", max_chars=20)
+    subject = st.text_input("Insert subject", max_chars=20, placeholder="Enter context of the file in one word")
     
     # Set the complexity level
     tone = st.text_input("Desired complexity level", max_chars=20, placeholder="Simple, Medium, Hard")
@@ -81,3 +81,20 @@ with st.form("user_inputs"):
 
                 else:
                     st.write(response)
+
+
+
+@st.fragment()
+def download_data():
+    try:
+        json_str, file_name=create_file(quiz, uploaded_file)
+        st.download_button(
+            label="Download data as JSON",
+            data=json_str,
+            file_name=file_name,
+            mime='text/json',
+        )
+    except:
+        pass
+
+download_data()

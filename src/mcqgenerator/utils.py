@@ -23,9 +23,6 @@ def read_file(file):
     
 def get_table_data(quiz_str):
     try:
-        # print("inside utils")
-        # print(type(quiz_str))
-        # print(quiz_str.replace("### RESPONSE_JSON", ""))
         quiz_dict=json.loads(quiz_str.replace("### RESPONSE_JSON", ""))
         quiz_table_data = []
 
@@ -44,3 +41,19 @@ def get_table_data(quiz_str):
     except Exception as e:
         traceback.print_exception(type(e), e, e.__traceback__)
         return False
+    
+
+def create_file(quiz_str, file_name_with_ext):
+    try:
+        quiz_dict=json.loads(quiz_str.replace("### RESPONSE_JSON", ""))
+        file_name = file_name_with_ext.name.split('.')[0]
+        res_file_name = f"{file_name}_result.json"
+
+        json_str = json.dumps(quiz_dict)
+        
+        return json_str, res_file_name
+    except Exception as e:
+        raise Exception("Unable to generate file, please try again!")
+
+
+        
