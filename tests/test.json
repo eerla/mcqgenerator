@@ -1,0 +1,52 @@
+{
+    "1": {
+        "mcq": "What is the scientific study of life called?",
+        "options": {
+            "a": "Chemistry",
+            "b": "Biology",
+            "c": "Physics",
+            "d": "Geology"
+        },
+        "correct": "b"
+    },
+    "2": {
+        "mcq": "Which theme in biology explains the unity and diversity of life?",
+        "options": {
+            "a": "Evolution",
+            "b": "Photosynthesis",
+            "c": "Cellular respiration",
+            "d": "Mitosis"
+        },
+        "correct": "a"
+    },
+    "3": {
+        "mcq": "What is the unit of organization in all organisms that process hereditary information?",
+        "options": {
+            "a": "Tissues",
+            "b": "Organs",
+            "c": "Cells",
+            "d": "Organ systems"
+        },
+        "correct": "c"
+    },
+    "4": {
+        "mcq": "What process allows organisms to move, grow, and reproduce?",
+        "options": {
+            "a": "Photosynthesis",
+            "b": "Evolution",
+            "c": "Energy processing",
+            "d": "Mitosis"
+        },
+        "correct": "c"
+    },
+    "5": {
+        "mcq": "What is the term for the classification and study of various forms of life?",
+        "options": {
+            "a": "Biodiversity",
+            "b": "Ecology",
+            "c": "Taxonomy",
+            "d": "Genetics"
+        },
+        "correct": "c"
+    }
+}
